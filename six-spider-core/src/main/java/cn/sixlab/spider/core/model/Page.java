@@ -26,7 +26,7 @@ public class Page <T>{
     public static <T> Page<T> newPage(Url url, String resp) {
         Page page = new Page();
         page.setUrl(url);
-        page.setDocument(Jsoup.parse(resp, url.getUrl()));
+        page.setDocument(Jsoup.parse(resp, url.getLink()));
         return page;
     }
     

@@ -51,10 +51,12 @@ public class SpiderEngine {
     }
     
     public void start() {
+        logger.info("六只蜘蛛出发!");
+
         crawling = true;
         
         while (crawling) {
-            logger.info("当前线程池" + "已完成:" + pool.getCompletedTaskCount()
+            logger.info("六只蜘蛛线程池" + "已完成:" + pool.getCompletedTaskCount()
                     + "    运行中：" + pool.getActiveCount()
                     + "    最大运行:" + pool.getPoolSize()
                     + "    等待队列:" + pool.getQueue().size());
@@ -74,9 +76,9 @@ public class SpiderEngine {
                 try {
                     pool.awaitTermination(10, TimeUnit.SECONDS);
                 } catch (InterruptedException e) {
-                    logger.error("关闭线程池失败！", e);
+                    logger.error("六只蜘蛛关闭线程池失败！", e);
                 }
-                logger.info("爬虫结束！");
+                logger.info("六只蜘蛛已回家!");
                 break;
             } else if (url == null) {
                 //没有取到种子就等待!
@@ -86,18 +88,16 @@ public class SpiderEngine {
                     e.printStackTrace();
                 }
             } else {
-                logger.info("正在处理:" + url.getUrl());
+                logger.info("六只蜘蛛发现目标:" + url.getLink());
                 pool.execute(new SpiderThread(url.clone()));
             }
         }
+
+        logger.info("六只蜘蛛已回家!");
     }
     
     public void stop() {
         crawling = false;
-    }
-    
-    private void loop(){
-        Url url = linkStore.pop();
     }
     
     class SpiderThread implements Runnable{

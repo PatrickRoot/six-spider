@@ -13,11 +13,17 @@ package cn.sixlab.spider.core.impl;
 
 import cn.sixlab.spider.core.api.Processor;
 import cn.sixlab.spider.core.model.Page;
+import cn.sixlab.spider.core.model.Url;
+
+import java.util.Random;
 
 public class ProcessorImpl implements Processor {
     @Override
     public Page process(Page page) {
-        page.addNewUrl(page.getUrl());
+        if(new Random().nextBoolean()){
+            Url url = new Url(page.getUrl().getLink() + "#" + Thread.currentThread().getId());
+            page.addNewUrl(url);
+        }
         page.setData(page.getDocument().data());
         return page;
     }

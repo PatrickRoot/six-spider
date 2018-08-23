@@ -13,11 +13,14 @@ package cn.sixlab.spider.core.impl;
 
 import cn.sixlab.spider.core.api.Saver;
 import cn.sixlab.spider.core.model.Page;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SaverImpl implements Saver {
+    private Logger logger = LoggerFactory.getLogger(getClass());
+
     @Override
     public void store(Page page) {
-        System.out.println(page.getUrl().getUrl());
-        System.out.println(page.getData());
+        logger.debug("请求:"+page.getUrl().getLink()+">>>>>"+page.getData());
     }
 }

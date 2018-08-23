@@ -8,8 +8,12 @@ import cn.sixlab.spider.core.impl.DownloaderImpl;
 import cn.sixlab.spider.core.impl.LinkStoreImpl;
 import cn.sixlab.spider.core.impl.ProcessorImpl;
 import cn.sixlab.spider.core.impl.SaverImpl;
+import cn.sixlab.spider.core.model.Url;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class SpiderBuilder {
@@ -19,10 +23,11 @@ public class SpiderBuilder {
     private LinkStore linkStore;
     private Processor processor;
     private Saver saver;
-    private long time;
+    private List<Url> urlList;
     private int thread;
     
     private SpiderBuilder() {
+        urlList = new ArrayList<>();
     }
     
     public static SpiderBuilder builder() {
@@ -35,7 +40,7 @@ public class SpiderBuilder {
         engine.setLinkStore(linkStore == null ? new LinkStoreImpl() : linkStore);
         engine.setProcessor(processor == null ? new ProcessorImpl() : processor);
         engine.setSaver(saver == null ? new SaverImpl() : saver);
-        engine.setThread();
+        engine.setThread(thread<0?5:thread);
         return engine;
     }
     
@@ -59,13 +64,24 @@ public class SpiderBuilder {
         return this;
     }
     
-    public SpiderBuilder setTime(long time) {
-        this.time = time;
-        return this;
-    }
-    
     public SpiderBuilder setThread(int thread) {
         this.thread = thread;
+        return this;
+    }
+
+    public SpiderBuilder addLink(String link) {
+        Url url = new Url();
+        url.setLink(link);
+        urlList.add(url);
+        return this;
+    }
+
+    public SpiderBuilder addLink(List<String> linkList) {
+        for (String link : linkList) {
+            Url url = new Url();
+            url.setLink(link);
+            urlList.add(url);
+        }
         return this;
     }
 }

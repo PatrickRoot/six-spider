@@ -20,6 +20,7 @@ public class SixSpider {
                 .setLinkStore(null)
                 .setProcessor(null)
                 .setSaver(null)
+                .addLink("https://www.sixlab.cn/")
                 .build();
 
         engine.start();

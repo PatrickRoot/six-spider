@@ -13,23 +13,34 @@ package cn.sixlab.spider.core.impl;
 
 import cn.sixlab.spider.core.api.LinkStore;
 import cn.sixlab.spider.core.model.Url;
-import cn.sixlab.spider.core.util.Storage;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class LinkStoreImpl implements LinkStore {
+
+    private static Queue<Url> urlList = new LinkedList<>();
+
+    static {
+        for (int i = 0; i < 10; i++) {
+            Url url = new Url("http://www.example.com/"+i);
+            urlList.add(url);
+        }
+    }
+
     @Override
     public Url pop() {
-        return Storage.poll();
+        return urlList.poll();
     }
     
     @Override
     public void push(Url url) {
-        Storage.push(url);
+        urlList.add(url);
     }
     
     @Override
-    public void push(List<Url> urlList) {
-        Storage.push(urlList);
+    public void push(List<Url> newList) {
+        urlList.addAll(newList);
     }
 }

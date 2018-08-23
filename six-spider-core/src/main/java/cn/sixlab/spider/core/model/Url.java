@@ -14,27 +14,28 @@ package cn.sixlab.spider.core.model;
 import java.util.Map;
 
 public class Url implements Cloneable{
-    private String url;
+    private String link;
     private String method;
     private Map<String, String> param;
     private Map<String, String> header;
-    
+
     public Url() {
-    
+        setMethod("get");
     }
     
-    public Url(String url) {
-        setUrl(url);
+    public Url(String link) {
+        setLink(link);
+        setMethod("get");
     }
-    
-    public String getUrl() {
-        return url;
+
+    public String getLink() {
+        return link;
     }
-    
-    public void setUrl(String url) {
-        this.url = url;
+
+    public void setLink(String link) {
+        this.link = link;
     }
-    
+
     public String getMethod() {
         return method;
     }
