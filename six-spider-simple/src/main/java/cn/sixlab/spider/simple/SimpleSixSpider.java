@@ -1,9 +1,15 @@
-package cn.sixlab.spider.api;
+package cn.sixlab.spider.simple;
 
+import cn.sixlab.spider.SpiderBuilder;
+import cn.sixlab.spider.SpiderEngine;
+import cn.sixlab.spider.simple.impl.DownloaderImpl;
+import cn.sixlab.spider.simple.impl.LinkStoreImpl;
+import cn.sixlab.spider.simple.impl.ProcessorImpl;
+import cn.sixlab.spider.simple.impl.SaverImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class SixSpider {
+public class SimpleSixSpider {
     private Logger logger = LoggerFactory.getLogger(getClass());
     
     public static void main(String[] args) {
@@ -16,28 +22,13 @@ public class SixSpider {
         // 7. *将新链接放入 队列类A*
         
         SpiderEngine engine = SpiderBuilder.builder()
-                .setDownloader(null)
-                .setLinkStore(null)
-                .setProcessor(null)
-                .setSaver(null)
+                .setDownloader(new DownloaderImpl())
+                .setLinkStore(new LinkStoreImpl())
+                .setProcessor(new ProcessorImpl())
+                .setSaver(new SaverImpl())
                 .addLink("https://www.sixlab.cn/")
                 .build();
 
         engine.start();
-    }
-
-    public SixSpider run() {
-        logger.info("六只蜘蛛出发!");
-        return this;
-    }
-
-    public SixSpider stop() {
-        logger.info("六只蜘蛛回家!");
-        return this;
-    }
-
-    public SixSpider pause() {
-        logger.info("六只蜘蛛休息!");
-        return this;
     }
 }

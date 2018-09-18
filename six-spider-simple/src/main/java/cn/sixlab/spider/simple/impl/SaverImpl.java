@@ -9,10 +9,10 @@
  * @time: 2018/8/21 22:54
  * @author: Patrick <root@sixlab.cn>
  */
-package cn.sixlab.spider.api.impl;
+package cn.sixlab.spider.simple.impl;
 
 import cn.sixlab.spider.api.Saver;
-import cn.sixlab.spider.api.model.Page;
+import cn.sixlab.spider.model.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

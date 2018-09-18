@@ -9,11 +9,11 @@
  * @time: 2018/8/21 22:52
  * @author: Patrick <root@sixlab.cn>
  */
-package cn.sixlab.spider.api.impl;
+package cn.sixlab.spider.simple.impl;
 
 import cn.sixlab.spider.api.Processor;
-import cn.sixlab.spider.api.model.Page;
-import cn.sixlab.spider.api.model.Url;
+import cn.sixlab.spider.model.Page;
+import cn.sixlab.spider.model.Url;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 

@@ -9,7 +9,7 @@
  * @time: 2018/8/21 21:51
  * @author: Patrick <root@sixlab.cn>
  */
-package cn.sixlab.spider.api.util;
+package cn.sixlab.spider.simple.util;
 
 import okhttp3.FormBody;
 import okhttp3.Headers;

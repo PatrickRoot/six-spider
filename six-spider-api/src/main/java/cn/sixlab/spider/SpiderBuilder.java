@@ -1,19 +1,17 @@
-package cn.sixlab.spider.api;
+package cn.sixlab.spider;
 
-import cn.sixlab.spider.api.impl.DownloaderImpl;
-import cn.sixlab.spider.api.impl.LinkStoreImpl;
-import cn.sixlab.spider.api.impl.ProcessorImpl;
-import cn.sixlab.spider.api.impl.SaverImpl;
-import cn.sixlab.spider.api.model.Url;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import cn.sixlab.spider.api.Downloader;
+import cn.sixlab.spider.api.LinkStore;
+import cn.sixlab.spider.api.Processor;
+import cn.sixlab.spider.api.Saver;
+import cn.sixlab.spider.model.SpiderException;
+import cn.sixlab.spider.model.Url;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class SpiderBuilder {
-    private Logger logger = LoggerFactory.getLogger(getClass());
     
     private Downloader downloader;
     private LinkStore linkStore;
@@ -31,12 +29,25 @@ public class SpiderBuilder {
     }
     
     public SpiderEngine build() {
+        if (null == downloader) {
+            throw new SpiderException("下载器 Downloader 未设置");
+        }
+        if (null == linkStore) {
+            throw new SpiderException("链接存储器 LinkStore 未设置");
+        }
+        if (null == processor) {
+            throw new SpiderException("页面处理器 Processor 未设置");
+        }
+        if (null == saver) {
+            throw new SpiderException("内存存储器 Saver 未设置");
+        }
+
         SpiderEngine engine = new SpiderEngine();
-        engine.setDownloader(downloader == null ? new DownloaderImpl() : downloader);
-        engine.setLinkStore(linkStore == null ? new LinkStoreImpl() : linkStore);
-        engine.setProcessor(processor == null ? new ProcessorImpl() : processor);
-        engine.setSaver(saver == null ? new SaverImpl() : saver);
-        engine.setThread(thread<0?5:thread);
+        engine.setDownloader(downloader);
+        engine.setLinkStore(linkStore);
+        engine.setProcessor(processor);
+        engine.setSaver(saver);
+        engine.setThread(thread <= 0 ? 5 : thread);
         return engine;
     }
     

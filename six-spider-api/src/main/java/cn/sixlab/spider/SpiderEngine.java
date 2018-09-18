@@ -1,7 +1,11 @@
-package cn.sixlab.spider.api;
+package cn.sixlab.spider;
 
-import cn.sixlab.spider.api.model.Page;
-import cn.sixlab.spider.api.model.Url;
+import cn.sixlab.spider.api.Downloader;
+import cn.sixlab.spider.api.LinkStore;
+import cn.sixlab.spider.api.Processor;
+import cn.sixlab.spider.api.Saver;
+import cn.sixlab.spider.model.Page;
+import cn.sixlab.spider.model.Url;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,10 +13,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-
 public class SpiderEngine {
     private Logger logger = LoggerFactory.getLogger(getClass());
-    
+
     private Downloader downloader;
     private LinkStore linkStore;
     private Processor processor;

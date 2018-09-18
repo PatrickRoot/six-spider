@@ -9,10 +9,10 @@
  * @time: 2018/8/21 22:50
  * @author: Patrick <root@sixlab.cn>
  */
-package cn.sixlab.spider.api.impl;
+package cn.sixlab.spider.simple.impl;
 
 import cn.sixlab.spider.api.LinkStore;
-import cn.sixlab.spider.api.model.Url;
+import cn.sixlab.spider.model.Url;
 
 import java.util.LinkedList;
 import java.util.List;

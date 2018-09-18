@@ -11,7 +11,7 @@
  */
 package cn.sixlab.spider.api;
 
-import cn.sixlab.spider.api.model.Page;
+import cn.sixlab.spider.model.Page;
 
 public interface Saver<T> {
     void store(Page<T> page);

@@ -11,7 +11,7 @@
  */
 package cn.sixlab.spider.api;
 
-import cn.sixlab.spider.api.model.Url;
+import cn.sixlab.spider.model.Url;
 
 import java.util.List;
 
