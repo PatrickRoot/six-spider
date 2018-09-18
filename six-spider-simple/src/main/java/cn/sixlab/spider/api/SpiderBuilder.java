@@ -1,14 +1,10 @@
-package cn.sixlab.spider.core;
+package cn.sixlab.spider.api;
 
-import cn.sixlab.spider.core.api.Downloader;
-import cn.sixlab.spider.core.api.LinkStore;
-import cn.sixlab.spider.core.api.Processor;
-import cn.sixlab.spider.core.api.Saver;
-import cn.sixlab.spider.core.impl.DownloaderImpl;
-import cn.sixlab.spider.core.impl.LinkStoreImpl;
-import cn.sixlab.spider.core.impl.ProcessorImpl;
-import cn.sixlab.spider.core.impl.SaverImpl;
-import cn.sixlab.spider.core.model.Url;
+import cn.sixlab.spider.api.impl.DownloaderImpl;
+import cn.sixlab.spider.api.impl.LinkStoreImpl;
+import cn.sixlab.spider.api.impl.ProcessorImpl;
+import cn.sixlab.spider.api.impl.SaverImpl;
+import cn.sixlab.spider.api.model.Url;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

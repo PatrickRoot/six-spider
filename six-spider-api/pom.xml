@@ -5,13 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.sixlab.spider</groupId>
-    <artifactId>six-spider</artifactId>
+    <artifactId>six-spider-api</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
 
-    <modules>
-        <module>six-spider-api</module>
-        <module>six-spider-simple</module>
-    </modules>
-
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -9,7 +9,7 @@
  * @time: 2018/8/21 21:45
  * @author: Patrick <root@sixlab.cn>
  */
-package cn.sixlab.spider.core.model;
+package cn.sixlab.spider.api.model;
 
 import java.util.Map;
 

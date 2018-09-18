@@ -9,9 +9,9 @@
  * @time: 2018/8/21 21:42
  * @author: Patrick <root@sixlab.cn>
  */
-package cn.sixlab.spider.core.api;
+package cn.sixlab.spider.api;
 
-import cn.sixlab.spider.core.model.Page;
+import cn.sixlab.spider.api.model.Page;
 
 public interface Saver<T> {
     void store(Page<T> page);

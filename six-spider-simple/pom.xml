@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.sixlab.spider</groupId>
-    <artifactId>six-spider-core</artifactId>
+    <artifactId>six-spider-simple</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <dependencies>
@@ -37,6 +37,12 @@
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
             <version>3.11.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.sixlab.spider</groupId>
+            <artifactId>six-spider-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

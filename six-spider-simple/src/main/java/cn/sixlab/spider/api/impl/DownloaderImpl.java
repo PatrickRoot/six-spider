@@ -9,11 +9,11 @@
  * @time: 2018/8/21 22:48
  * @author: Patrick <root@sixlab.cn>
  */
-package cn.sixlab.spider.core.impl;
+package cn.sixlab.spider.api.impl;
 
-import cn.sixlab.spider.core.api.Downloader;
-import cn.sixlab.spider.core.model.Page;
-import cn.sixlab.spider.core.model.Url;
+import cn.sixlab.spider.api.Downloader;
+import cn.sixlab.spider.api.model.Page;
+import cn.sixlab.spider.api.model.Url;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
