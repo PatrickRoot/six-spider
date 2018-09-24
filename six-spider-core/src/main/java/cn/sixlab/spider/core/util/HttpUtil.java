@@ -9,7 +9,7 @@
  * @time: 2018/8/21 21:51
  * @author: Patrick <root@sixlab.cn>
  */
-package cn.sixlab.spider.simple.util;
+package cn.sixlab.spider.core.util;
 
 import okhttp3.FormBody;
 import okhttp3.Headers;
@@ -54,7 +54,7 @@ public class HttpUtil {
      */
     public static String sendRequest(String url, String method, Map<String, String> data,
             Map<String, String> header) {
-        if ("post".equalsIgnoreCase(method)) {
+        if ("POST".equalsIgnoreCase(method)) {
             return sendPost(url, data, header);
         } else {
             return sendGet(url, data, header);

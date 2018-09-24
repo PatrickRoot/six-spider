@@ -9,28 +9,20 @@
  * @time: 2018/8/21 22:50
  * @author: Patrick <root@sixlab.cn>
  */
-package cn.sixlab.spider.simple.impl;
+package cn.sixlab.spider.core.impl;
 
 import cn.sixlab.spider.api.LinkStore;
 import cn.sixlab.spider.model.Url;
 
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class LinkStoreImpl implements LinkStore {
-
-    private static Queue<Url> urlList = new LinkedList<>();
-
-    static {
-        for (int i = 0; i < 10; i++) {
-            Url url = new Url("http://www.example.com/"+i);
-            urlList.add(url);
-        }
-    }
-
+    
+    private ConcurrentLinkedQueue<Url> urlList = new ConcurrentLinkedQueue<>();
+    
     @Override
-    public Url pop() {
+    public Url poll() {
         return urlList.poll();
     }
     

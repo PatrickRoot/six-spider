@@ -5,6 +5,8 @@ import cn.sixlab.spider.api.LinkStore;
 import cn.sixlab.spider.api.Processor;
 import cn.sixlab.spider.api.Saver;
 import cn.sixlab.spider.model.Page;
+import cn.sixlab.spider.model.Seed;
+import cn.sixlab.spider.model.SpiderException;
 import cn.sixlab.spider.model.Url;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SpiderEngine {
     private Logger logger = LoggerFactory.getLogger(getClass());
-
+    
     private Downloader downloader;
     private LinkStore linkStore;
     private Processor processor;
@@ -23,26 +25,30 @@ public class SpiderEngine {
     private boolean crawling = false;
     private ThreadPoolExecutor pool;
     
-    protected SpiderEngine() {
+    private SpiderEngine() {
     }
     
-    public void setDownloader(Downloader downloader) {
+    public static Builder builder() {
+        return new Builder();
+    }
+    
+    private void setDownloader(Downloader downloader) {
         this.downloader = downloader;
     }
     
-    public void setLinkStore(LinkStore linkStore) {
+    private void setLinkStore(LinkStore linkStore) {
         this.linkStore = linkStore;
     }
     
-    public void setProcessor(Processor processor) {
+    private void setProcessor(Processor processor) {
         this.processor = processor;
     }
     
-    public void setSaver(Saver saver) {
+    private void setSaver(Saver saver) {
         this.saver = saver;
     }
     
-    public void setThread(int thread){
+    private void setThread(int thread) {
         if (thread <= 0) {
             thread = 5;
         }
@@ -51,7 +57,7 @@ public class SpiderEngine {
     
     public void start() {
         logger.info("六只蜘蛛出发!");
-
+        
         crawling = true;
         
         while (crawling) {
@@ -69,7 +75,7 @@ public class SpiderEngine {
                 }
                 continue;
             }
-            Url url = linkStore.pop();
+            Url url = linkStore.poll();
             if (url == null && pool.getActiveCount() == 0) {
                 pool.shutdown();
                 try {
@@ -91,7 +97,7 @@ public class SpiderEngine {
                 pool.execute(new SpiderThread(url.clone()));
             }
         }
-
+        
         logger.info("六只蜘蛛已回家!");
     }
     
@@ -99,19 +105,102 @@ public class SpiderEngine {
         crawling = false;
     }
     
-    class SpiderThread implements Runnable{
+    class SpiderThread implements Runnable {
         private Url url;
-    
+        
         SpiderThread(Url url) {
             this.url = url;
         }
-    
+        
         @Override
         public void run() {
             Page page = downloader.download(url);
-            page = processor.process(page);
-            saver.store(page);
-            linkStore.push(page.getNewUrl());
+            
+            if (null != page) {
+                page = processor.process(page);
+                
+                saver.store(page);
+                
+                if (null != page.getNewUrl() && page.getNewUrl().size() > 0) {
+                    linkStore.push(page.getNewUrl());
+                }
+            }
+        }
+    }
+    
+    public static class Builder {
+        
+        private Downloader downloader;
+        private LinkStore linkStore;
+        private Processor processor;
+        private Saver saver;
+        private Seed seed;
+        private int thread;
+        
+        private Builder() {
+        }
+        
+        public SpiderEngine build() {
+            if (null == downloader) {
+                throw new SpiderException("下载器 Downloader 未设置");
+            }
+            if (null == linkStore) {
+                throw new SpiderException("链接存储器 LinkStore 未设置");
+            }
+            if (null == processor) {
+                throw new SpiderException("页面处理器 Processor 未设置");
+            }
+            if (null == saver) {
+                throw new SpiderException("内存存储器 Saver 未设置");
+            }
+            if (null == seed) {
+                throw new SpiderException("种子 Seed 未设置");
+            }
+            
+            linkStore.push(seed.getUrlList());
+            
+            SpiderEngine engine = new SpiderEngine();
+            engine.setDownloader(downloader);
+            engine.setLinkStore(linkStore);
+            engine.setProcessor(processor);
+            engine.setSaver(saver);
+            engine.setThread(thread <= 0 ? 5 : thread);
+            return engine;
+        }
+        
+        public Builder setDownloader(Downloader downloader) {
+            this.downloader = downloader;
+            return this;
+        }
+        
+        public Builder setLinkStore(LinkStore linkStore) {
+            this.linkStore = linkStore;
+            return this;
+        }
+        
+        public Builder setProcessor(Processor processor) {
+            this.processor = processor;
+            return this;
+        }
+        
+        public Builder setSaver(Saver saver) {
+            this.saver = saver;
+            return this;
+        }
+        
+        public Builder setThread(int thread) {
+            this.thread = thread;
+            return this;
+        }
+    
+        public Builder setSeed(String url) {
+            this.seed = new Seed(url);
+            return this;
+        }
+    
+        public Builder setSeed(Seed seed) {
+            this.seed = seed;
+            return this;
         }
     }
 }

@@ -26,9 +26,13 @@ public class Page <T>{
         page.setResponse(resp);
         return page;
     }
-
-    public void addNewUrl(Url url){
+    
+    public void addNewUrl(Url url) {
         newUrl.add(url);
+    }
+    
+    public void addNewUrl(List<Url> newUrl) {
+        newUrl.addAll(newUrl);
     }
 
     public Url getUrl() {

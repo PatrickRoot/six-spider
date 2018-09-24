@@ -11,7 +11,7 @@
 
     <modules>
         <module>six-spider-api</module>
-        <module>six-spider-simple</module>
+        <module>six-spider-core</module>
     </modules>
 
 </project>

@@ -20,12 +20,12 @@ public class Url implements Cloneable{
     private Map<String, String> header;
 
     public Url() {
-        setMethod("get");
+        setMethod("GET");
     }
     
     public Url(String link) {
         setLink(link);
-        setMethod("get");
+        setMethod("GET");
     }
 
     public String getLink() {
@@ -41,7 +41,7 @@ public class Url implements Cloneable{
     }
     
     public void setMethod(String method) {
-        this.method = method;
+        this.method = method.toUpperCase();
     }
     
     public Map<String, String> getParam() {
@@ -69,5 +69,10 @@ public class Url implements Cloneable{
         } finally {
             return url;
         }
+    }
+    
+    @Override
+    public String toString() {
+        return method + " " + link;
     }
 }

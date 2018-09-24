@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="六楼实验室">
+    <title>六楼实验室</title>
+    <meta name="author" content="六楼的雨">
+
+    <meta name="keywords"
+          content="六楼,六楼的雨,sixlab.cn,blog.sixlab.cn,六楼实验室,六楼的博客,minesoft.tech,矿软,矿软科技,minesoft,">
+
+
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+
+    <script type="application/ld+json">
+        {"@context":"http://schema.org","@type":"Website","@id":"https://blog.sixlab.cn","author":{"@type":"Person","name":"六楼的雨","sameAs":["https://github.com/PatrickRoot","http://stackoverflow.com/users","https://twitter.com/","https://facebook.com/","https://plus.google.com/","https://www.linkedin.com/profile/","mailto"],"image":"avatar.jpg"},"name":"六楼实验室","description":"六楼实验室，博客 By 六楼的雨","url":"https://blog.sixlab.cn","keywords":"六楼, 六楼的雨, sixlab.cn, blog.sixlab.cn, 六楼实验室, 六楼的博客, minesoft.tech, 矿软, 矿软科技, minesoft"}
+    </script>
+    <meta name="description" content="六楼实验室，博客 By 六楼的雨">
+    <meta name="keywords"
+          content="六楼,六楼的雨,sixlab.cn,blog.sixlab.cn,六楼实验室,六楼的博客,minesoft.tech,矿软,矿软科技,minesoft">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="六楼实验室">
+    <meta property="og:url" content="https://blog.sixlab.cn/index.html">
+    <meta property="og:site_name" content="六楼实验室">
+    <meta property="og:description" content="六楼实验室，博客 By 六楼的雨">
+    <meta property="og:locale" content="zh-CN">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="六楼实验室">
+    <meta name="twitter:description" content="六楼实验室，博客 By 六楼的雨">
+    <meta name="twitter:creator" content="@nianqinianyi">
+
+    <link rel="publisher" href="https://plus.google.com/+PatrickRoot" />
+
+
+    <meta property="og:image" content="https://blog.sixlab.cn/assets/images/avatar.jpg" />
+
+
+    <!--STYLES-->
+    <link rel="stylesheet"
+          href="/assets/css/style-corb1nkcoatwsazglvvhzvuzraozry5bne2bs2dj0ftnvephjdnygk4vacbq.min.css">
+    <!--STYLES END-->
+
+
+</head>
+
+<body>
+<div id="blog">
+    <!-- Define author's picture -->
+
+
+    <header id="header" data-behavior="2">
+        <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+        <div class="header-title">
+            <a class="header-title-link" href="/ ">六楼实验室</a>
+        </div>
+
+
+        <a style="color:#f44336;font-weight: bolder;font-size: 20px;"
+           class="header-picture header-right-picture "
+           href="#about">
+
+
+            赏
+            <!-- <img class="header-picture" src="/assets/images/avatar.jpg" alt="作者的图片"/> -->
+
+        </a>
+
+    </header>
+
+    <!-- Define author's picture -->
+
+
+    <nav id="sidebar" data-behavior="2">
+        <div class="sidebar-container">
+
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/avatar.jpg"
+                         alt="作者的图片" />
+                </a>
+                <h4 class="sidebar-profile-name">六楼的雨</h4>
+
+                <h5 class="sidebar-profile-bio"><p>赤手空拳来到人世间<br />为写完这段代码不顾一切</p>
+                </h5>
+
+            </div>
+
+
+            <ul class="sidebar-buttons">
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link "
+                       href="/ "
+
+                       title="首页"
+                    >
+
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">首页</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link "
+                       href="/categories"
+
+                       title="分类"
+                    >
+
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">分类</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link "
+                       href="/tags"
+
+                       title="标签"
+                    >
+
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">标签</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link "
+                       href="/archive"
+
+                       title="归档"
+                    >
+
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">归档</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link open-algolia-search"
+                       href="#search"
+
+                       title="搜索"
+                    >
+
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">搜索</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link "
+                       href="#about"
+
+                       title="关于"
+                    >
+
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">关于</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <ul class="sidebar-buttons">
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link " href="https://github.com/PatrickRoot"
+                       target="_blank" rel="noopener" title="GitHub">
+
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link " href="http://stackoverflow.com/users"
+                       target="_blank" rel="noopener" title="Stack Overflow">
+
+                        <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Stack Overflow</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link " href="https://twitter.com/" target="_blank"
+                       rel="noopener" title="Twitter">
+
+                        <i class="sidebar-button-icon fab fa-stamp" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Twitter</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link " href="https://facebook.com/" target="_blank"
+                       rel="noopener" title="Facebook">
+
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link " href="https://plus.google.com/" target="_blank"
+                       rel="noopener" title="Google Plus">
+
+                        <i class="sidebar-button-icon fab fa-google-plus" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Google Plus</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link " href="https://www.linkedin.com/profile/"
+                       target="_blank" rel="noopener" title="LinkedIn">
+
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link "
+                       href="/mailto"
+                       title="邮箱"
+                    >
+
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">邮箱</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <ul class="sidebar-buttons">
+
+                <li class="sidebar-button">
+
+                    <a class="sidebar-button-link "
+                       href="/atom.xml"
+
+                       title="RSS"
+                    >
+
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <div id="main" data-behavior="2"
+         class="
+                        hasCoverMetaIn
+                        ">
+        <section class="postShorten-group main-content-wrap">
+
+
+            <article class="postShorten postShorten--thumbnailimg-right">
+                <div class="postShorten-wrap">
+
+                    <div class="postShorten-header">
+                        <h1 class="postShorten-title">
+
+                            <a class="link-unstyled" href="/archives/2018/09/01/idea-tips/">
+                                Intellij IDEA 每日提示集锦-201809
+                            </a>
+
+                        </h1>
+                        <div class="postShorten-meta">
+                            <time datetime="2018-09-01T08:12:32+08:00">
+
+                                2018-09-01 08:12
+
+                            </time>
+
+                            <span>分类: </span>
+
+                            <a class="category-link" href="/categories/工具/">工具</a>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="postShorten-excerpt">
+                        <p>Intellij IDEA 每天的 tip of the day 的翻译，每日翻译一个，这里是 2018 年 9 月份的tip of the
+                            day。<br>
+
+                            <a href="/archives/2018/09/01/idea-tips/"
+                               class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+
+
+                    </div>
+
+                </div>
+
+                <a href="/archives/2018/09/01/idea-tips/">
+                    <div class="postShorten-thumbnailimg">
+                        <img alt="" src="/images/2018-09-01-idea-tips/2018-09-01.png" />
+                    </div>
+                </a>
+
+
+            </article>
+
+
+            <article class="postShorten postShorten--thumbnailimg-left">
+                <div class="postShorten-wrap">
+
+                    <div class="postShorten-header">
+                        <h1 class="postShorten-title">
+
+                            <a class="link-unstyled"
+                               href="/archives/2018/08/30/theme-tranquilpeak/">
+                                Hexo 主题 hexo-theme-tranquilpeak 部分功能总结
+                            </a>
+
+                        </h1>
+                        <div class="postShorten-meta">
+                            <time datetime="2018-08-30T22:21:24+08:00">
+
+                                2018-08-30 22:21
+
+                            </time>
+
+                            <span>分类: </span>
+
+                            <a class="category-link" href="/categories/工具/">工具</a>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="postShorten-excerpt">
+                        <p> 最近发现了一个 Hexo 主题，又好看功能又强大，<a
+                                href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak"
+                                target="_blank" rel="noopener">hexo-theme-tranquilpeak</a>，这里总结一下遇到的问题，以及注意事项。
+                        </p>
+
+                        <a href="/archives/2018/08/30/theme-tranquilpeak/"
+                           class="postShorten-excerpt_link link">
+                            阅读全文
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+                <a href="/archives/2018/08/30/theme-tranquilpeak/">
+                    <div class="postShorten-thumbnailimg">
+                        <img alt="" src="/images/2018-08-30-theme-tranquilpeak/preview.png" />
+                    </div>
+                </a>
+
+
+            </article>
+
+
+            <article class="postShorten postShorten--thumbnailimg-right">
+                <div class="postShorten-wrap">
+
+                    <div class="postShorten-header">
+                        <h1 class="postShorten-title">
+
+                            <a class="link-unstyled" href="/archives/2018/08/24/idea-tips/">
+                                Intellij IDEA 每日提示集锦-201808
+                            </a>
+
+                        </h1>
+                        <div class="postShorten-meta">
+                            <time datetime="2018-08-24T08:42:08+08:00">
+
+                                2018-08-24 08:42
+
+                            </time>
+
+                            <span>分类: </span>
+
+                            <a class="category-link" href="/categories/工具/">工具</a>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="postShorten-excerpt">
+                        <p>Intellij IDEA 每天的 tip of the day 的翻译，每日翻译一个，这里是 2018 年 8 月份的tip of the
+                            day。<br>
+
+                            <a href="/archives/2018/08/24/idea-tips/"
+                               class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+
+
+                    </div>
+
+                </div>
+
+                <a href="/archives/2018/08/24/idea-tips/">
+                    <div class="postShorten-thumbnailimg">
+                        <img alt="" src="/images/2018-08-24-idea-tips/2018-08-24.png" />
+                    </div>
+                </a>
+
+
+            </article>
+
+
+            <article class="postShorten postShorten--thumbnailimg-right">
+                <div class="postShorten-wrap">
+
+                    <div class="postShorten-header">
+                        <h1 class="postShorten-title">
+
+                            <a class="link-unstyled" href="/archives/2018/08/15/principle2/">
+                                重读设计模式 - 里氏替换原则
+                            </a>
+
+                        </h1>
+                        <div class="postShorten-meta">
+                            <time datetime="2018-08-15T22:22:26+08:00">
+
+                                2018-08-15 22:22
+
+                            </time>
+
+                            <span>分类: </span>
+
+                            <a class="category-link" href="/categories/Java/">Java</a>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="postShorten-excerpt">
+                        <h1 id="一、总览"><a href="#一、总览" class="headerlink" title="一、总览"></a>一、总览</h1>
+                        <p>LSP: Liskov Substitution Principle.<br>Functions that use pointers or
+                            references to base classes must be able to use objects of derived
+                            classes without knowing it.<br>基本思想：在任意父类出现的地方，都可以直接使用子类来代替。<br>
+
+                            <a href="/archives/2018/08/15/principle2/"
+                               class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="postShorten postShorten--thumbnailimg-right">
+                <div class="postShorten-wrap">
+
+                    <div class="postShorten-header">
+                        <h1 class="postShorten-title">
+
+                            <a class="link-unstyled" href="/archives/2018/08/15/principle1/">
+                                重读设计模式 - 单一职责原则
+                            </a>
+
+                        </h1>
+                        <div class="postShorten-meta">
+                            <time datetime="2018-08-15T22:12:26+08:00">
+
+                                2018-08-15 22:12
+
+                            </time>
+
+                            <span>分类: </span>
+
+                            <a class="category-link" href="/categories/Java/">Java</a>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="postShorten-excerpt">
+                        <h1 id="一、总览"><a href="#一、总览" class="headerlink" title="一、总览"></a>一、总览</h1>
+                        <p>SRP: Single responsibility principle<br>There should never be more than
+                            one reason for a class to change.<br>基本思想：高内聚，低耦合。<br>
+
+                            <a href="/archives/2018/08/15/principle1/"
+                               class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="postShorten postShorten--thumbnailimg-right">
+                <div class="postShorten-wrap">
+
+                    <div class="postShorten-header">
+                        <h1 class="postShorten-title">
+
+                            <a class="link-unstyled" href="/archives/2018/06/07/gogs/">
+                                Centos 7 开发环境之 Gogs 的安装及配置（二进制）
+                            </a>
+
+                        </h1>
+                        <div class="postShorten-meta">
+                            <time datetime="2018-06-07T12:44:32+08:00">
+
+                                2018-06-07 12:44
+
+                            </time>
+
+                            <span>分类: </span>
+
+                            <a class="category-link" href="/categories/技术研究/">技术研究</a>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="postShorten-excerpt">
+                        <p>最近需要在服务器上安装了 Git 服务器，本来安装了Gitlab，但是太重了，还集成了Nginx
+                            Gem一堆东西，改个端口都特别麻烦还报502错误，所以换成了 Gogs，简单好用，记录一下过程，防止下次继续踩坑。<br>
+
+                            <a href="/archives/2018/06/07/gogs/"
+                               class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="postShorten postShorten--thumbnailimg-right">
+                <div class="postShorten-wrap">
+
+                    <div class="postShorten-header">
+                        <h1 class="postShorten-title">
+
+                            <a class="link-unstyled" href="/archives/2018/06/06/gitlab/">
+                                Centos 7 开发环境之 Gitlab 的安装及配置
+                            </a>
+
+                        </h1>
+                        <div class="postShorten-meta">
+                            <time datetime="2018-06-06T15:34:26+08:00">
+
+                                2018-06-06 15:34
+
+                            </time>
+
+                            <span>分类: </span>
+
+                            <a class="category-link" href="/categories/技术研究/">技术研究</a>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="postShorten-excerpt">
+                        <p>最近需要在服务器上安装了 Gitlab，记录一下过程，防止下次继续踩坑。</p>
+                        <p>注意：官网的教程的是 gitlab-ee 版本（企业版），需要安装的是 gitlab-ce（社区版）<br>
+
+                            <a href="/archives/2018/06/06/gitlab/"
+                               class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="postShorten postShorten--thumbnailimg-right">
+                <div class="postShorten-wrap">
+
+                    <div class="postShorten-header">
+                        <h1 class="postShorten-title">
+
+                            <a class="link-unstyled" href="/archives/2018/05/16/idea/">
+                                IDEA 常用设置
+                            </a>
+
+                        </h1>
+                        <div class="postShorten-meta">
+                            <time datetime="2018-05-16T17:25:30+08:00">
+
+                                2018-05-16 17:25
+
+                            </time>
+
+                            <span>分类: </span>
+
+                            <a class="category-link" href="/categories/工具/">工具</a>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="postShorten-excerpt">
+                        <h1 id="为了更好用"><a href="#为了更好用" class="headerlink" title="为了更好用"></a>为了更好用
+                        </h1>
+                        <h3 id="代码补全不区分大小写"><a href="#代码补全不区分大小写" class="headerlink"
+                                               title="代码补全不区分大小写"></a>代码补全不区分大小写</h3>
+
+                        <a href="/archives/2018/05/16/idea/" class="postShorten-excerpt_link link">
+                            阅读全文
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="postShorten postShorten--thumbnailimg-right">
+                <div class="postShorten-wrap">
+
+                    <div class="postShorten-header">
+                        <h1 class="postShorten-title">
+
+                            <a class="link-unstyled" href="/archives/932/">
+                                Centos 7 开发环境之 Redis 的安装及配置
+                            </a>
+
+                        </h1>
+                        <div class="postShorten-meta">
+                            <time datetime="2017-11-22T17:00:18+08:00">
+
+                                2017-11-22 17:00
+
+                            </time>
+
+                            <span>分类: </span>
+
+                            <a class="category-link" href="/categories/技术研究/">技术研究</a>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="postShorten-excerpt">
+                        <p>最近需要在服务器上安装 MySQL、MongoDB、Redis 和 ELK 等，记录一下过程，防止下次继续踩坑。<br>
+
+                            <a href="/archives/932/" class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="postShorten postShorten--thumbnailimg-right">
+                <div class="postShorten-wrap">
+
+                    <div class="postShorten-header">
+                        <h1 class="postShorten-title">
+
+                            <a class="link-unstyled" href="/archives/919/">
+                                Centos 7 开发环境之 MongoDB 的安装及配置(yum源)
+                            </a>
+
+                        </h1>
+                        <div class="postShorten-meta">
+                            <time datetime="2017-11-22T15:52:59+08:00">
+
+                                2017-11-22 15:52
+
+                            </time>
+
+                            <span>分类: </span>
+
+                            <a class="category-link" href="/categories/技术研究/">技术研究</a>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="postShorten-excerpt">
+                        <p>最近需要在服务器上安装 MySQL、MongoDB、Redis 和 ELK 等，记录一下过程，防止下次继续踩坑。<br>
+
+                            <a href="/archives/919/" class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <div class="pagination-bar">
+                <ul class="pagination">
+
+
+                    <li class="pagination-next">
+                        <a class="btn btn--default btn--small" href="/page/2/">
+                            <span>下一页</span>
+                            <i class="fa fa-angle-right text-base icon-ml"></i>
+                        </a>
+                    </li>
+
+                    <li class="pagination-number">第 1 页 共 9 页</li>
+                </ul>
+            </div>
+
+        </section>
+
+
+        <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 六楼的雨. All Rights Reserved.
+    </span>
+        </footer>
+
+    </div>
+
+</div>
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+
+        <img id="about-card-picture" src="/assets/images/avatar.jpg" alt="作者的图片" />
+
+        <!-- <h4 id="about-card-name">六楼的雨</h4> -->
+        <h4 id="about-card-name">菜农 · 六楼的雨</h4>
+
+        <div id="about-card-bio"><p>赤手空拳来到人世间<br />为写完这段代码不顾一切</p>
+        </div>
+
+        <!--
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>菜农</p>
+
+            </div>
+
+
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br/>
+                漯河 · 中国
+            </div>
+         -->
+
+        <!-- 下边是自定义的 -->
+        <div id="about-card-name" style="color: #5d686f;">
+            我不喝咖啡，赏我一杯肥宅快乐水吧
+        </div>
+        <div id="about-card-job">
+            <img class="pay-qr" src="/images/alipay.jpg">
+            <br />
+            支付宝
+        </div>
+        <div id="about-card-job">
+            <img class="pay-qr" src="/images/wechat.jpg">
+            微信
+        </div>
+    </div>
+</div>
+
+
+<div id="cover" style="background-image:url('/assets/images/cover-v1.2.0.jpg');"></div>
+<!--SCRIPTS-->
+<script src="/assets/js/script-fjkzbnyh0s4anfrflgtzrm2lu7advebvnr4nzekczh9rosufi755xddtf64p.min.js"></script>
+<!--SCRIPTS END-->
+
+
+</body>
+</html>

@@ -16,10 +16,10 @@ import cn.sixlab.spider.model.Url;
 import java.util.List;
 
 public interface LinkStore {
-    Url pop();
+    Url poll();
     
     void push(Url url);
     
-    void push(List<Url> urlList);
+    void push(List<Url> newList);
     
 }
